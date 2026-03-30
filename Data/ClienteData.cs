@@ -102,6 +102,22 @@ namespace MiniCRM.Api.Data
 
             return null;
         }
+
+        public void EliminarCliente(int id)
+        {
+            using (var connection = _conexion.ObtenerConexion())
+            {
+                connection.Open();
+
+                var query = "DELETE FROM Clientes WHERE Id = @Id";
+
+                using (var command = new SqliteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Id", id);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
         public void ActualizarCliente(Cliente cliente)
         {
             using (var connection = _conexion.ObtenerConexion())

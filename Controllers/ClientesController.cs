@@ -17,6 +17,22 @@ namespace MiniCRM.Api.Controllers
             return Ok(clientes);
         }
 
+        [HttpDelete("{id}")]
+        public ActionResult Delete(int id)
+        {
+            var data = new ClienteData();
+            var clienteExistente = data.ObtenerClientePorId(id);
+
+            if (clienteExistente == null)
+            {
+                return NotFound();
+            }
+
+            data.EliminarCliente(id);
+
+            return Ok(new { mensaje = "Cliente eliminado correctamente" });
+        }
+
         [HttpGet("{id}")]
         public ActionResult<Cliente> GetPorId(int id)
         {
