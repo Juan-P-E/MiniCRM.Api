@@ -4,6 +4,8 @@ Web API desarrollada en **C# con ASP.NET Core y SQLite**, orientada a la gestió
 
 Este proyecto forma parte de mi portfolio backend, enfocado en demostrar diseño de APIs REST, persistencia de datos, separación por capas y documentación de endpoints.
 
+![Swagger Preview](./swagger-preview.png)
+
 ---
 
 ##  Funcionalidades actuales
